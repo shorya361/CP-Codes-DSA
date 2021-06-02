@@ -1,7 +1,6 @@
 #THis program has all the basic sorting algorithms
 #Bubble Sort, Selection Sort, Insertion Sort, Count Sort, Quick Sort, Merge Sort
 
-
 def BubbleSort(arr):
     for i in range(len(arr)):
         swapped=False
@@ -23,6 +22,7 @@ def SelectionSort(arr):
         temp=arr[min_id]
         arr[min_id]=arr[i]
         arr[i]=temp
+
 
 def InsertionSort(arr):
     n=len(arr)
@@ -60,7 +60,7 @@ def quickSort(arr,start,end):
     pivot=arr[end]
     j=i
     while(j<end):
-        if arr[j]< pivot:
+        if arr[j] < pivot:
             arr[i],arr[j]=arr[j],arr[i]
             i+=1
         j+=1
@@ -70,7 +70,6 @@ def quickSort(arr,start,end):
 
 
 def MergeSort(arr,start,end):
-
 
     def sort(arr,start,mid,end):
         # print('=================')
