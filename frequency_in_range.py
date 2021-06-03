@@ -15,6 +15,4 @@ print(l1)
 l1.sort()
 l.sort()
 a=0
-for i in range(n):
-	a+=l[i]*l1[i]
-print(a)
+print(l,l1)

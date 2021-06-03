@@ -1,7 +1,7 @@
-# You are given an integer array coins representing coins of different denominations and an integer amount representing a
-# total amount of money.
-# Return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up 
-# by any combination of the coins, return -1.
+# You are given an integer array coins representing coins of different denominations and an integer 
+# amount representing a total amount of money.
+# Return the fewest number of coins that you need to make up that amount. If that amount of money
+# cannot be made up by any combination of the coins, return -1.
 def coinChange( coins, amount):
         
         if amount==0:
@@ -18,12 +18,13 @@ def coinChange( coins, amount):
                                 matrix[i][j] = min(1 + matrix[i][j-coins[i-1]], matrix[i-1][j]) 
                         else:
                             matrix[i][j]=  matrix[i-1][j]
-        
+        for i in matrix:
+            print(i)
         if matrix[-1][-1] ==amount+1:
             return -1
         return matrix[-1][-1]
 
-
+coinChange([2],3)
 # In this question, we have to find the minimum number of coins required to get the given amount if we can use infinite no.
 # of ith coins. the approach is : we will check that in what scenario we are getting the minimum numbers of coins
 # scenario 1: when we include the ith coin:: matrix[i][j-coins[i]] +1 (since we included the ith coin we have to increment

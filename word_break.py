@@ -11,23 +11,42 @@ def wordBreak(dict, str, out=""):
     # base condition: if the given string is empty then it means that string is completed and been found.
     if not str:
         print(out)
-        return True
 
     for i in range(1, len(str) + 1):
         prefix = str[:i]
-        if prefix in dict and wordBreak(dict, str[i:], out + " " + prefix):
+        
+        if prefix in dict :
+            wordBreak(dict, str[i:], out + "" + mor[prefix])
             # if the prefix is available and the remaining string is available as well then we will return True
-            return True
+            
     # when either prefix is not available in dict and remaining string is not present then false
-    return False
- 
+    
 dict = [
     "self", "th", "is", "famous", "Word",
     "break", "b", "r", "e", "a", "k", "br",
     "bre", "brea", "ak", "problem"
 ]
-str = "Wordbreakproblem"
-print(wordBreak(dict, str))
+
+mor = {
+    '.-': 'A',        '-...': 'B',     '-.-.': 'C',
+    '-..': 'D',       '.': 'E',        '..-.': 'F',
+    '-.': 'G',        '....': 'H',     '..': 'I',  
+    '.---': 'J',      '-.-': 'K',      '.-..': 'L',
+    '--': 'M',        '-.': 'N',       '---': 'O', 
+    '.--.': 'P',      '--.-': 'Q',     '.-.': 'R',
+    '...': 'S',       '-': 'T',        '..-': 'U', 
+    '...-': 'V',      '.--': 'W',      '-..-': 'X',
+    '-.--': 'Y',      '--..': 'Z',     '-----': '0', 
+    '.----': '1',     '..---': '2',    '...--': '3',
+    '....-': '4',     '.....': '5',    '-....': '6', 
+    '--...': '7',     '---..': '8',    '----.': '9',
+    ' ':' '
+     }
+
+str='.... . .-.. .-.. ---'
+# str='.--....-....-.-..-----.'
+# str = "Wordbreakproblem"
+wordBreak(mor, str)
 
 
 
@@ -75,12 +94,12 @@ str = "Wordbreakproblem"
 
 # lookup table to store solutions to subproblems
 # `lookup[i]` stores if substring `str[n-i…n)` can be segmented or not
-lookup = [-1] * (len(str) + 1)
-print(len(lookup))
-if wordBreak(dict, str, lookup):
-    print("The string can be segmented")
-else:
-    print("The string can't be segmented")
+# lookup = [-1] * (len(str) + 1)
+# print(len(lookup))
+# if wordBreak(dict, str, lookup):
+#     print("The string can be segmented")
+# else:
+#     print("The string can't be segmented")
 
 
 
@@ -105,4 +124,4 @@ dict = [
     "bre", "brea", "ak", "problem"
 ]
 str = "Wordbreakproblem"
-wordBreak_(dict, str)
+# wordBreak_(dict, str)

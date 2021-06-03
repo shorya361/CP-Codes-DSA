@@ -36,11 +36,10 @@ Partition([2,2,1,1])
 #   matrix[i][j] = matrix[i-1][j] or matrix[i-1][j-nums[i-1]]
 #                  not considered      considered
 #  anyone of them is True then we can achieve our aim.
-
+ 
 #             0  1  2  3 
 #      []  0  T  F  F  F
 #     [1]  1  T  T  F  F
 #   [1,1]  2  T  T  T  F
 #  [1,1,2] 3  T  T  T  T
 # [1,1,2,2]4  T  T  T  T 
-#

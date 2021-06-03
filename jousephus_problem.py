@@ -1,9 +1,5 @@
-import math
-
-k=2
-n=int(input())
-
-binary=bin(n)
-binary=binary[3:]+binary[2]
-binary=int(binary,2)
-print(binary-1) # when we are arranging the n from 0 to n-1 ; else answer is binary
+def josephus(n,k):
+    if n==1:
+        return 0
+    return (josephus(n-1,k)+k)%n
+print(josephus(41,2)) # starting number is 0 

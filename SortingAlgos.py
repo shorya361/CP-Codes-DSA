@@ -72,8 +72,6 @@ def quickSort(arr,start,end):
 def MergeSort(arr,start,end):
 
     def sort(arr,start,mid,end):
-        # print('=================')
-        # print(arr[start:mid], arr[mid:end],start,mid,end)
         n=end-start
         newArr=[]
         i=start
@@ -102,7 +100,6 @@ def MergeSort(arr,start,end):
 
     if end-start==1:
         return
-    # print(arr[start:end],start,end)
     mid = start + (end-start)//2
     MergeSort(arr,start, mid)
     MergeSort(arr,mid,end)
@@ -141,7 +138,6 @@ print(originalArray)
 originalArray=[12,11,53,11,2,21,19,15,11,14]
 MergeSort(originalArray,0,len(originalArray))
 print(originalArray)
-
 
 
 def heapSort(arr,n):

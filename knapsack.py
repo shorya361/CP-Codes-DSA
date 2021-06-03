@@ -7,7 +7,7 @@ def fractional_Knapsack(mass,n,profit,weight):
     i=n-1
     
     while(mass>0 and i>=0 ):
-        print(i, mass,total_profit,sorted[i][1][1],sorted[i][1][0] )
+        # print(i, mass,total_profit,sorted[i][1][1],sorted[i][1][0] )
         if mass >=sorted[i][1][0]:
             total_profit+= sorted[i][1][1]
             mass-=sorted[i][1][0]
@@ -36,12 +36,12 @@ def Zero_One_Knapsack(mass,n,profit,weight):
     print(knapsackTable[-1][-1])
 
 
-M=50
-n=3
-profit=[60,100,120]
-weight=[10,20,30]
+# M=50
+# n=3
+# profit=[60,100,120]
+# weight=[10,20,30]
 # fractional_Knapsack(M,n,profit,weight)
 
 
-Zero_One_Knapsack(M,n,profit,weight)
+# Zero_One_Knapsack(M,n,profit,weight)
 # arr[] = {{60, 10}, {100, 20}, {120, 30}} 
